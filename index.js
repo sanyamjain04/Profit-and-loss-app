@@ -14,6 +14,8 @@ const calculateProfitAndLoss = () => {
     const quantityV = Number(quantity.value);
     const cPriceV = Number(cPrice.value);
     if (iPriceV == "" || quantityV == "" || cPriceV == "") return showOutput("Please enter a value")
+    if (iPriceV < 0 || quantityV < 0 || cPriceV < 0) return showOutput("Please enter a Positive value")
+  
 
   if (iPriceV > cPriceV) {
     const loss = (iPriceV - cPriceV) * quantityV;
